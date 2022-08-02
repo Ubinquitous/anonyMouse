@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/anonyMouse/static/css/main.29a5714c.css",
+    "main.js": "/anonyMouse/static/js/main.23baa33e.js",
+    "index.html": "/anonyMouse/index.html",
+    "main.29a5714c.css.map": "/anonyMouse/static/css/main.29a5714c.css.map",
+    "main.23baa33e.js.map": "/anonyMouse/static/js/main.23baa33e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29a5714c.css",
+    "static/js/main.23baa33e.js"
+  ]
+}
