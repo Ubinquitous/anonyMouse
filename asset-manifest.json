@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/anonyMouse/static/css/main.29a5714c.css",
-    "main.js": "/anonyMouse/static/js/main.0ef4c31c.js",
+    "main.js": "/anonyMouse/static/js/main.6a4a6481.js",
     "index.html": "/anonyMouse/index.html",
     "main.29a5714c.css.map": "/anonyMouse/static/css/main.29a5714c.css.map",
-    "main.0ef4c31c.js.map": "/anonyMouse/static/js/main.0ef4c31c.js.map"
+    "main.6a4a6481.js.map": "/anonyMouse/static/js/main.6a4a6481.js.map"
   },
   "entrypoints": [
     "static/css/main.29a5714c.css",
-    "static/js/main.0ef4c31c.js"
+    "static/js/main.6a4a6481.js"
   ]
 }
