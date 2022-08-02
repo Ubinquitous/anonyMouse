@@ -49,7 +49,7 @@ const Mouse = ({mouseObj, isOwner, text}) => {
             <div className="mouse__actions">
                 <span onClick={onDeleteClick}>
                 <img 
-                    src='https://cdn-icons.flaticon.com/png/512/3405/premium/3405244.png?token=exp=1659426763~hmac=f8673e0be30eed19475256d083221702'
+                    src='https://cdn-icons-png.flaticon.com/512/1345/1345823.png'
                     style={{
                         width:'20px',
                         height:'20px'
