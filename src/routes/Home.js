@@ -3,11 +3,14 @@ import React, { useState, useEffect } from "react";
 import Mouse from "components/Mouse";
 import MouseFactory from "components/MouseFactory";
 
-const Home = ({ userObj }) => {
+const Home = ({ userObj, creatorAt }) => {
     const [mouses, setMouses] = useState([]);
 
     useEffect(() => {
-        dbService.collection("mouses").onSnapshot((snapShot) => {
+        dbService
+            .collection("mouses")
+            .orderBy("createdAt", "desc")
+            .onSnapshot((snapShot) => {
             const mouseArray = snapShot.docs.map(doc => ({id:doc.id, ...doc.data(),}));
             setMouses(mouseArray);
         });
