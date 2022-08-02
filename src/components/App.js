@@ -20,7 +20,6 @@ function App() {
                 isLoggedIn={Boolean(userObj)}
                 userObj={userObj}
                 /> : "Initializing..."}
-      <footer>&copy; {new Date().getFullYear()} AnonyMouse</footer>
     </>
   );
 }

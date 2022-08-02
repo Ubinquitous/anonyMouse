@@ -25,29 +25,48 @@ const Mouse = ({mouseObj, isOwner, text}) => {
     };
 
     return (
-    <div>
+    <div className="mouse">
         {editing ? (
             <>
-                <form onSubmit={onSubmit}>
+                <form onSubmit={onSubmit} className="container mouseEdit">
                     <input 
                         type="text" 
                         placeholder="Edit your mouse"
                         value={newMouse} 
                         required
+                        autoFocus
+                        className="formInput"
                         onChange={onChange} 
                     />
-                    <input type="submit" value="Update"/>
+                    <input type="submit" value="Update" className="formBtn"/>
                 </form>
-                <button onClick={toggleEditing}>Cancel</button>
+                <button onClick={toggleEditing} className="formBtn cancelBtn">Cancel</button>
             </>
         ) : (
         <>
         <h4>{text}</h4>
         {isOwner && 
-            <>
-                <button onClick={onDeleteClick}>delete</button>
-                <button onClick={toggleEditing}>Edit</button>
-            </>
+            <div className="mouse__actions">
+                <span onClick={onDeleteClick}>
+                <img 
+                    src='https://cdn-icons.flaticon.com/png/512/3405/premium/3405244.png?token=exp=1659426763~hmac=f8673e0be30eed19475256d083221702'
+                    style={{
+                        width:'20px',
+                        height:'20px'
+                    }}
+                />
+                </span>
+                <span onClick={toggleEditing}>
+                <img 
+                    src='https://cdn-icons-png.flaticon.com/512/650/650143.png'
+                    style={{
+                        width:'15px',
+                        height:'15px',
+                        marginBottom:2,
+                    }}
+                />
+                </span>
+            </div>
             }
         </>
         )}

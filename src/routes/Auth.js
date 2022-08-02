@@ -1,41 +1,8 @@
 import React, { useState } from "react";
 import { authService, firebaseInstance } from "fbase";
+import AuthForm from "components/AuthForm";
 
 const Auth = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [newAccount, setNewAccount] = useState(true);
-    const [error, setError] = useState("");
-
-    const onChange = (event) => {
-      const {
-        target: { name, value },
-      } = event;
-
-      if (name === "email") {
-        setEmail(value);
-      } else if (name === "password") {
-        setPassword(value);
-      }
-    };
-    const onSubmit = async(event) => {
-      event.preventDefault();
-      try {
-        let data;
-        if (newAccount) {
-          data = await authService.createUserWithEmailAndPassword(
-            email,
-            password
-          );
-        } else {
-          data = await authService.signInWithEmailAndPassword(email, password);
-        }
-        console.log(data);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-    const toggleAccount = () => setNewAccount((prev) => !prev);
 
     const onSocialClick = async (event) => {
         const {
@@ -51,39 +18,35 @@ const Auth = () => {
         console.log(data);
       };
     return (
-      <div>
-        <form onSubmit={onSubmit}>
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            required
-            value={email}
-            onChange={onChange}
-          />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            required
-            value={password}
-            onChange={onChange}
-          />
-          <input
-            type="submit"
-            value={newAccount ? "Create Account" : "Sign In"}
-          />
-        {error}
-        </form>
-        <span onClick={toggleAccount}>
-          {newAccount ? "Sign In" : "Create Account"}
-        </span>
-        <div>
-        <button onClick={onSocialClick} name="google">
+        <div className="authContainer">
+            <img src="https://www.the-pr.co.kr/news/photo/201804/34111_59145_240.jpg"
+                style={{
+                    marginBottom:30,
+                    width:'100px',
+                    height:'100px'
+                }}
+            />
+        <AuthForm/>
+        <div className="authBtns">
+        <button onClick={onSocialClick} name="google" className="authBtn">
           Continue with Google
+          <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
+            style={{
+                width:'20px',
+                height:'20px',
+                marginLeft:5,
+            }}
+          />
         </button>
-        <button onClick={onSocialClick} name="github">
+        <button onClick={onSocialClick} name="github" className="authBtn">
           Continue with Github
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png"
+            style={{
+                width:'20px',
+                height:'20px',
+                marginLeft:5,
+            }}
+          />
         </button>
         </div>
       </div>
