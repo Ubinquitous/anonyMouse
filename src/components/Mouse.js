@@ -1,7 +1,7 @@
 import { dbService } from "fbase";
 import React, { useState } from "react";
 
-const Mouse = ({mouseObj, isOwner, text}) => {
+const Mouse = ({mouseObj, isOwner, text, userObj}) => {
     const [editing, setEditing] = useState(false);
     const [newMouse, setNewMouse] = useState(text);
     const onDeleteClick = () => {

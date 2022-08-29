@@ -22,6 +22,7 @@ const Home = ({ userObj, creatorAt }) => {
             <div style={{ marginTop: 30}}>
                 {mouses.map((mouse)=>(
                 <Mouse 
+                    userObj={userObj}
                     key={mouse.id}
                     mouseObj={mouse}    
                     isOwner={mouse.creatorId === userObj.uid}

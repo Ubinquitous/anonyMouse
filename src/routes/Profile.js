@@ -25,6 +25,7 @@ export default ({ userObj }) => {
                 displayName: newDisplayName,
             });
         }
+        window.location.reload();
     };
 
     return (
