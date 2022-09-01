@@ -11,26 +11,27 @@ const Home = ({ userObj, creatorAt }) => {
             .collection("mouses")
             .orderBy("createdAt", "desc")
             .onSnapshot((snapShot) => {
-            const mouseArray = snapShot.docs.map(doc => ({id:doc.id, ...doc.data(),}));
-            setMouses(mouseArray);
-        });
+                const mouseArray = snapShot.docs.map(doc => ({ id: doc.id, ...doc.data(), }));
+                setMouses(mouseArray);
+            });
     }, []);
 
     return (
         <div className="container">
-            <MouseFactory userObj={userObj}/>
-            <div style={{ marginTop: 30}}>
-                {mouses.map((mouse)=>(
-                <Mouse 
-                    userObj={userObj}
-                    key={mouse.id}
-                    mouseObj={mouse}    
-                    isOwner={mouse.creatorId === userObj.uid}
-                    text={mouse.text}
-                />
+            <MouseFactory userObj={userObj} />
+            <div style={{ marginTop: 30 }}>
+                {mouses.map((mouse) => (
+                    <Mouse
+                        userObj={userObj}
+                        key={mouse.id}
+                        mouseObj={mouse}
+                        isOwner={mouse.creatorId === userObj.uid}
+                        text={mouse.text}
+                    />
                 ))}
             </div>
         </div>
     );
+
 }
 export default Home;
