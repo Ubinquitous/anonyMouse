@@ -31,7 +31,7 @@ const Home = ({ userObj, creatorAt }) => {
                 ))}
             </div>
         </div>
-    );
 
+    );
 }
 export default Home;
