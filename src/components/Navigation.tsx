@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import * as React from "react";
+import { Link } from 'react-router-dom';
 
-const Navigation = ({ userObj }) => {
+const Navigation = ({ userObj }: any) => {
     return (
         <ul style={{ display: "flex", justifyContent: "center", marginTop: 50 }}>
             <li style={{ listStyle: "none" }}><Link to="/" style={{ marginRight: 10 }}>
@@ -12,6 +12,7 @@ const Navigation = ({ userObj }) => {
                         height: '70px',
                         borderRadius: '8000px'
                     }}
+                    alt=''
                 /></Link></li>
             <li style={{ listStyle: "none" }}><Link to="/profile" style={{
                 marginLeft: 10,
@@ -26,6 +27,7 @@ const Navigation = ({ userObj }) => {
                         width: '55px',
                         height: '55px'
                     }}
+                    alt=''
                 />
                 <span style={{
                     marginTop: 10

@@ -6,34 +6,34 @@ import { Redirect } from "react-router-dom";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-const AppRouter = ({ isLoggedIn, userObj }) => {
+const AppRouter = ({ isLoggedIn, userObj }: any) => {
   return (
     <Router>
-        {isLoggedIn && <Navigation userObj={userObj}/>}
+      {isLoggedIn && <Navigation userObj={userObj} />}
       <Switch>
         {isLoggedIn ? (
           <div style={{
             maxWidth: 890,
-            width:"100%",
+            width: "100%",
             margin: "0 auto",
             marginTop: 80,
             display: "flex",
             justifyContent: "center",
           }}>
             <Route exact path="/">
-                <Home userObj={userObj}/>
+              <Home userObj={userObj} />
             </Route>
             <Route exact path="/profile">
-                <Profile userObj={userObj}/>
+              <Profile userObj={userObj} />
             </Route>
             <Redirect from="*" to="/" />
           </div>
         ) : (
           <>
-          <Route exact path="/">
-                <Auth/>
-          </Route>
-          <Redirect from="*" to="/" />
+            <Route exact path="/">
+              <Auth />
+            </Route>
+            <Redirect from="*" to="/" />
           </>
         )}
       </Switch>
